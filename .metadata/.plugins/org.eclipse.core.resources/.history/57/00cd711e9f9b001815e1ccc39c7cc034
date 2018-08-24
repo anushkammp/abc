@@ -1,0 +1,23 @@
+import java.util.ArrayList;
+import java.util.List;
+
+import com.beans.Book;
+
+public class MyDemo {
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		
+		List<Object> list=new ArrayList<Object>();
+		addInfo(list);
+		
+
+	}
+
+	public static void addInfo(List<Object> books) 
+	{
+		System.out.println("Add info List Object");
+		books.add(new Book());
+	}
+}

@@ -1,0 +1,26 @@
+
+public class MyClass<T> 
+{
+	private T data;
+	
+	public MyClass() 
+	{
+		// TODO Auto-generated constructor stub
+		
+	}
+
+	public MyClass(T data) {
+		super();
+		this.data = data;
+	}
+
+	public T getData() {
+		return data;
+	}
+
+	public void setData(T data) {
+		this.data = data;
+	}
+	
+
+}

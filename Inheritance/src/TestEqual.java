@@ -1,0 +1,18 @@
+import com.pojo.Person;
+
+public class TestEqual {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Person p1=new Person(12,"ABC");
+		Person p2=new Person(12,"ABC");
+//		Person p3=p1;
+		
+		if(p1.equals(p2))
+			System.out.println("Equal");
+		else
+			System.out.println("Not Equal");
+
+	}
+
+}

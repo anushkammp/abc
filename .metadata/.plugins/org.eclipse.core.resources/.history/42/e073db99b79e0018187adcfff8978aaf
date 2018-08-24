@@ -1,0 +1,40 @@
+import java.util.Hashtable;
+
+import javax.naming.Binding;
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingEnumeration;
+import javax.naming.NamingException;
+
+public class TestJNDI {
+
+	public static void main(String[] args)
+	{
+		// TODO Auto-generated method stub
+		try {
+		
+			Hashtable hashtablenv=new Hashtable();
+			hashtablenv.put(Context.INITIAL_CONTEXT_FACTORY, "com.sun.jndi.fscontext.RefContextFactory");
+			hashtablenv.put(Context.PROVIDER_URL, args[0]);
+		
+			Context c=new InitialContext(hashtablenv);
+			
+			if(args.length==1)
+			{
+				NamingEnumeration naming=c.listBindings("");
+				while(naming.hasMore())
+				{
+					Binding binding=(Binding) naming.next();
+					System.out.println(binding.getName()+"  "+binding.getObject());
+				}
+			}
+			c.close();
+		} 
+		catch (NamingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+}

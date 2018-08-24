@@ -1,0 +1,15 @@
+
+public class Thread1 extends Thread 
+{
+	private int data;
+	public Thread1() {
+		// TODO Auto-generated constructor stub
+		data=10;
+	}
+	
+	public Thread1(int data) {
+		// TODO Auto-generated constructor stub
+		this.data=data;
+	}
+
+}

@@ -1,0 +1,28 @@
+import java.util.List;
+
+import com.beans.Book;
+import com.interfaces.BookIO;
+
+public class BookIOImpl implements BookIO {
+
+	@Override
+	public Book getBook() 
+	{
+		// TODO Auto-generated method stub
+		
+		return null;
+	}
+
+	@Override
+	public void printAll(List<Book> books) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void printBook(Book book) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

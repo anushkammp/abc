@@ -1,0 +1,39 @@
+package com.annotation;
+
+import java.lang.annotation.Annotation;
+import java.lang.reflect.Method;
+
+public class TestAnnotation 
+{
+	@MyAnnotation(value=12)
+	@MyDate(date=13,month="Jan",year=2019)
+	public static void display()
+	{
+		System.out.println("Display");
+	}
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		TestAnnotation test= new TestAnnotation();
+		Class c1=test.getClass();
+		
+		Method[] methods=c1.getMethods();
+		for(Method method:methods)
+		{
+			Annotation[] an=method.getAnnotations();
+			for(Annotation a:an)
+			{
+				if(a.annotationType().equals(MyDate.class))
+				{
+					MyDate m=(MyDate)a;
+					int date=m.date();
+					System.out.println("Date:");
+				}
+			}
+		}
+			
+
+	}
+
+}

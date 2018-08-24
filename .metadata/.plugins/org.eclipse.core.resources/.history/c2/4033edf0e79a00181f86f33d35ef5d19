@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+public class DemoBookMain {
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+//		1 add   2 update    3 find by ID  4find by name
+		
+		int choice=0;
+		String name;
+		BookOperationsImpl bo=new BookOperationsImpl();
+		BookIOImpl bio=new BookIOImpl();
+		Scanner sc=new Scanner(System.in);
+		
+		do 
+		{
+			System.out.println("-----------MENU---------");
+			System.out.println("1)Add data");
+			System.out.println("2)Update data");
+			System.out.println("3)Find by ID");
+			System.out.println("4)Find by name");
+			System.out.println("5)Display all");
+			
+			System.out.print("enter oepration no:");
+			choice=sc.nextInt();
+			
+			switch(choice)
+			{
+			case 1:bo.addBook(bio.getBook());
+				break;
+				
+			case 2:bo.deleteBook(bio.getBook());
+				break;
+				
+			case 3:bo.findBookbyID(bio.getBook());
+				break;
+			
+			case 4:System.out.println("Enter book name:");
+			}
+		}while(choice<1 || choice>5);
+
+	}
+
+}

@@ -1,0 +1,16 @@
+import java.sql.Connection;
+import java.sql.DatabaseMetaData;
+
+import com.connection.MyConnection;
+
+public class DempTransaction {
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		Connection con=MyConnection.getConnection();
+		
+
+	}
+
+}

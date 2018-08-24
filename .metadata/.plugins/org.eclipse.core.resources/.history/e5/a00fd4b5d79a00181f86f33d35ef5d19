@@ -1,0 +1,14 @@
+import java.util.HashSet;
+import java.util.Set;
+
+import com.beans.Book;
+
+public class DemoHashSet 
+{
+
+	public static void main(String [] args)
+	{
+		Set<Book> a=new HashSet<>();
+		
+	}
+}

@@ -1,0 +1,53 @@
+import java.util.Scanner;
+
+import com.beans.Book;
+
+public class MainFunction 
+{
+	public static Book getData()
+	{
+		Book b=new Book();
+		int no;
+		String name,publication,author;
+		Scanner sc=new Scanner(System.in);
+		System.out.print("Enter id:");
+		no=sc.nextInt();
+		sc.nextLine();
+		System.out.print("Enter name:");
+		name=sc.nextLine();
+		sc.nextLine();
+		System.out.print("Enter publication:");
+		publication=sc.nextLine();
+		sc.nextLine();
+		System.out.print("Enter author:");
+		author=sc.nextLine();
+		sc.nextLine();
+		return b;
+	}
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int choice;
+		BookDAO ob=new BookDAOImpl();
+		
+		do
+		{
+			System.out.println("--------MENU------");
+			
+			System.out.println("1)Add Book \n2)Update book \n3)Display all book \n4)Find by ID \n5)Find by name \n6)Find by author");
+			choice=sc.nextInt();
+			
+			switch(choice)
+			{
+			case 1:	System.out.println("Add book");
+					getData;
+					
+			case 2:
+					
+			}
+		}while(choice<=7 && choice>=1);
+	
+	}
+}

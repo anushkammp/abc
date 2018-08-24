@@ -1,0 +1,44 @@
+
+public class AccountDanger extends Thread 
+{
+	private Account ac=new Account();
+	
+	@Override
+	public void run() 
+	{
+		// TODO Auto-generated method stub
+		for(int i=0;i<5;i++)
+		{
+			makeWithdrawal(10);
+			if(ac.getBalance()<=0)
+				System.out.println("no balance in account");
+		}
+	}
+
+	public void makeWithdrawal(int amt)
+	{
+		if(ac.getBalance()>=amt)
+		{
+			System.out.println(Thread.currentThread().getName()+" withdraw :"+amt);
+			try {
+				Thread.sleep(500);
+			} 
+			catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			ac.withdrawl(amt);
+			System.out.println(Thread.currentThread().getName()+" successfully withdrawed.............");
+		}
+	}
+	
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		Thread me=new Thread();
+		me.setName("Me");
+		Thread you=new Thread();
+		you.setName("You");
+	}
+
+}

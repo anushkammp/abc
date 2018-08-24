@@ -1,0 +1,23 @@
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import com.connection.MyConnection;
+import com.pojos.Employee;
+
+public class EmployeeDAO 
+{
+	public int addEmployee(Employee e)
+	{
+		String q="insert into Employee values(?,?,?)";
+		try 
+		{
+			PreparedStatement ps=MyConnection.getConnection().prepareStatement(q);
+			return ps.executeUpdate();
+		}
+		catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+	}
+
+}

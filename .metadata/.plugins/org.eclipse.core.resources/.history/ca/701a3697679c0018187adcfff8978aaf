@@ -1,0 +1,27 @@
+
+public class DemoWait {
+
+	public static void main(String[] args) 
+	{
+		DemoNotify n=new DemoNotify();
+		n.start();
+		try 
+		{
+			synchronized(n)
+			{
+				n.wait();
+				System.out.println("sum:"+n.sum);
+			}
+			
+		} 
+		catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println("sum:"+n.sum);
+		
+		// TODO Auto-generated method stub
+
+	}
+
+}

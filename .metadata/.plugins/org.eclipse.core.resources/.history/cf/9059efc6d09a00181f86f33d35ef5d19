@@ -1,0 +1,34 @@
+import java.util.ArrayList;
+import java.util.List;
+
+import com.beans.Book;
+
+public class DemoBookArrayList {
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		List<Book> li=new ArrayList<Book>();
+		
+//		Book b=new Book();
+		li.add(new Book());
+		li.add(new Book(1234,"Adv Java","Oracle",1234));
+		li.add(new Book(123,"Adv Java","Oracle",34));
+		li.add(new Book(1234,"Adv Java","Oracle",1234));
+		
+		System.out.println("No of books:"+li.size());
+//		System.out.println(li);
+		for(Book b:li)
+			System.out.println(b);
+		
+		Book b=new Book(123,"Adv Java","Oracle",34);
+		boolean found=li.equals(b);
+		
+		if(found)
+			System.out.println("Found");
+		else
+			System.out.println("Not found");
+
+	}
+
+}

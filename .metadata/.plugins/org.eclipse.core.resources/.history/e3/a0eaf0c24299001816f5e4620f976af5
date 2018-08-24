@@ -1,0 +1,17 @@
+import com.pojo.Employee;
+
+public class TestEmp {
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		
+		
+		Employee e=new Employee(20,"ANU",12,42000);
+//		e.display();
+		
+		System.out.println(e.toString());
+
+	}
+
+}

@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+import com.beans.Book;
+
+public class MainFunction 
+{
+	public static Book getData()
+	{
+		Scanner sc=new Scanner(System.in);
+	}
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int choice;
+		
+		do
+		{
+			System.out.println("--------MENU------");
+			
+			System.out.println("1)Add Book \n2)Update book \n3)Display all book \n4)Find by ID \n5)Find by name \n6)Find by author");
+			choice=sc.nextInt();
+			
+			switch(choice)
+			{
+			case 1:	System.out.println("Add book");
+					System.out.print("Enter book id");
+					
+			}
+	}
+
+}

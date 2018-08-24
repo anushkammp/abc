@@ -1,0 +1,30 @@
+package com.pojo;
+
+public class Student 
+{
+	private String name;
+	private int[] marks;
+	private int roll_no;
+	
+	public Student()
+	{
+		name="Unknown";
+		marks=new int[] {0,0,0,0,0};
+		roll_no=0;
+	}
+	
+	public Student(String name,int[] marks,int roll_no)
+	{
+		this.name=name;
+		this.marks=marks;
+		this.roll_no=roll_no;
+	}
+	
+	public void display()
+	{
+		System.out.println("Student Data:");
+		System.out.println("Name    :"+name);
+		System.out.println("Marks   :"+marks);
+		System.out.println("Roll no :"+roll_no);
+	}
+}

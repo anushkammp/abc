@@ -1,0 +1,30 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class DemoArrayList {
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		
+		//List :ordered,unsorted,allow duplicate
+		List l=new ArrayList();
+		l.add("ABC");
+		l.add("XYZ");
+		l.add("Hello");
+		l.add("Morning");
+		l.add("MAD");
+		l.add("MAD");
+		
+//		l.size();
+		
+		System.out.println(l.size());
+
+	}
+	
+	public void add(LinkedList l)
+	{
+		
+	}
+
+}

@@ -1,0 +1,27 @@
+import java.util.List;
+
+import com.pojos.Employee;
+
+public class MainEmployee {
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+
+		Employee e=new Employee(20,1234,"AAA");
+		EmployeeDAO dao=new EmployeeDAO();
+		
+//		ADD DATA
+//		int row=dao.addEmployee(e);
+//		if(row>0)
+//			System.out.println(row+" rows affected");
+//		else
+//			System.out.println("Failed to execte query");
+		
+//		DISPLAY DATA
+		List<Employee> emp=dao.getAllEmployee();
+		for(Employee em:emp)
+			System.out.println(em);
+	}
+
+}

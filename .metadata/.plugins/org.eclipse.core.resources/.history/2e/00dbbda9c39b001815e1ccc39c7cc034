@@ -1,0 +1,11 @@
+package com.exception;
+
+public class MyException extends Exception
+{
+	private String msg;
+	public void showCause()
+	{
+		System.out.println("exception..........");
+	}
+
+}

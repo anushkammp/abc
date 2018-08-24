@@ -1,0 +1,8 @@
+package com.beans;
+
+public class Book 
+{
+	private String name;
+	
+	
+}

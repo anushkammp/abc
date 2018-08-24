@@ -1,0 +1,32 @@
+package com.exception;
+
+import java.io.PrintStream;
+
+public class MyException extends Exception
+{
+	private String msg;
+	
+	public MyException() {
+		// TODO Auto-generated constructor stub
+		msg="Got exception";
+	}
+	
+	public MyException(String msg)
+	{
+		super(msg);
+		this.msg=msg;
+	}
+	
+	public void showCause()
+	{
+		System.out.println("exception..........");
+	}
+
+	@Override
+	public void printStackTrace(PrintStream s) 
+	{
+		// TODO Auto-generated method stub
+		super.printStackTrace(s);
+		System.out.println("Its me............");
+	}
+}

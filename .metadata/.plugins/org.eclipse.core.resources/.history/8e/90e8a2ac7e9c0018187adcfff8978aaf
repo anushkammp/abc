@@ -1,0 +1,25 @@
+
+public class AccountDanger extends Thread 
+{
+	private Account one=new Account();
+	
+	@Override
+	public void run() 
+	{
+		// TODO Auto-generated method stub
+		for(int i=0;i<5;i++)
+			makeWithdrawal(10);
+	}
+
+	public void makeWithdrawal(int amt)
+	{
+		
+	}
+	
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		
+	}
+
+}

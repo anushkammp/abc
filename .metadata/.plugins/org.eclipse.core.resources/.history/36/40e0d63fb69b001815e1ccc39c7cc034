@@ -1,0 +1,21 @@
+package com.demo;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.beans.Book;
+
+public class DemoBookList {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		List<Book> books=new ArrayList<Book>();
+		books.add(new Book(1234,"Adv Java","Oracle",1234));
+		books.add(new Book());
+		books.add(new Book(1,"AAA","Me",123));
+		books.add(new Book(1,".net","Oracle",123));
+		books.add(new Book(13,"Tinker Bell","Disney",123));
+
+	}
+
+}

@@ -1,0 +1,24 @@
+<%@page import="com.pojos.Employee"%>
+<%@page import="java.util.List"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>SHOW</title>
+</head>
+<body>
+
+<%
+	List<Employee> emp=(List<Employee>)request.getAttribute("employee");
+
+	for(Employee e:emp)
+		{
+		out.println(e.getEmpID()+"  "+e.getName());
+		}
+
+%>
+
+</body>
+</html>

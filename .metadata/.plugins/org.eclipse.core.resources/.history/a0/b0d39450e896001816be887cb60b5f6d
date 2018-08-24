@@ -1,0 +1,37 @@
+
+public class DemoCL 
+{
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		System.out.println("num of parameters"+args.length);
+//		for(int i=0;i<args.length;i++)
+//		{
+//			System.out.println("Argument :"+args[i]);	
+//		}
+//		
+//		OR
+		
+//		for(String a:args)
+//			System.out.println("Argument :"+a);
+		
+		int sum=0;
+		for(String ar: args)
+			sum=sum+Integer.parseInt(ar);
+		System.out.println("Sum :"+sum);
+		
+		Integer ob=new Integer(12);
+		System.out.println(ob);
+		
+		int val=ob.intValue();//auto unboxing
+		
+		int value=ob;//auto boxing
+		
+		ob=20;
+		
+		System.out.println(ob);
+		System.out.println(val);
+	}
+
+}

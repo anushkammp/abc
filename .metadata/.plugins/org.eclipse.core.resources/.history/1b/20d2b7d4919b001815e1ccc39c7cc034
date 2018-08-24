@@ -1,0 +1,23 @@
+import java.util.NavigableSet;
+import java.util.TreeSet;
+
+public class DemoNavigableSet {
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		NavigableSet<String> s=new TreeSet();
+		
+		s.add("Hello");
+		s.add("Good");
+		s.add("Morning");
+		s.add("Cava");
+		
+		System.out.println(s);
+		
+		System.out.println(s.headSet("Morning", true));
+		System.out.println(s.tailSet("Morning",true));
+
+	}
+
+}

@@ -1,0 +1,17 @@
+
+public class MyThread extends Thread 
+{
+	@Override
+	public void run() 
+	{
+		// TODO Auto-generated method stub
+		System.out.println("Thread running:"+Thread.currentThread().getName());
+		System.out.println("Hello");
+	}
+
+	public static void main(String[] args) 
+	{
+	Thread t=new  MyThread();
+	Thread.setname("");
+	}
+}

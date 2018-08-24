@@ -1,0 +1,20 @@
+import java.util.HashMap;
+import java.util.Map;
+
+public class DemoHashMap {
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		Map<String,String> m=new HashMap<>();
+		m.put("Citi", "Pune");
+		m.put("Wipro", "Pune");
+		m.put("Syntel","Chennai");
+		m.put("DB", "Banglore");
+		m.put("DB", "Mumbai");
+		
+		System.out.println(m);
+
+	}
+
+}

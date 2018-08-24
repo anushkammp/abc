@@ -1,0 +1,13 @@
+
+public class DemoWait {
+
+	public static void main(String[] args) 
+	{
+		DemoNotify n=new DemoNotify();
+		n.start();
+		System.out.println("sum:"+sum);
+		// TODO Auto-generated method stub
+
+	}
+
+}

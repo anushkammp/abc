@@ -1,0 +1,23 @@
+import java.util.Set;
+import java.util.TreeSet;
+
+import com.beans.Book;
+
+public class DemoTreeSet {
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		Set<Book> books=new TreeSet();
+		books.add(new Book());
+		books.add(new Book(1234,"Adv Java","Oracle",1234));
+		books.add(new Book(123,"Java","Oracle",34));
+		books.add(new Book(12,"Spring","Oracle",1234));
+		
+		System.out.println("size:"+books.size());
+		for(Book b:books)
+			System.out.println(b);
+
+	}
+
+}

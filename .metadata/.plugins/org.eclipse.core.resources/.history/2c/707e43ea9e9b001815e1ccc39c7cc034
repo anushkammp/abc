@@ -1,0 +1,21 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class MyDemo {
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		
+		List<Object> list=new ArrayList<Object>();
+		
+
+	}
+
+	public static void addInfo(List<Object> books) 
+	{
+		// TODO Auto-generated method stub
+		books.add(new Book);
+
+	}
+}

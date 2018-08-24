@@ -1,0 +1,25 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+public class DemConnection {
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		
+		try 
+		{
+			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+			DriverManager.getConnection("jdbc:sqlserver://localhost", sa, sa123)
+//			System.out.println("Display");
+			
+		}
+		catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+
+	}
+
+}

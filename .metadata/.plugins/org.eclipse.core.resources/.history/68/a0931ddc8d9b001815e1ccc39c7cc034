@@ -1,0 +1,16 @@
+import java.util.ArrayList;
+import java.util.List;
+
+import com.beans.Book;
+
+public class DemoMapList {
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		Map<String,List<Book>> m=new 
+		List<Book> book1=new ArrayList<>();
+
+	}
+
+}

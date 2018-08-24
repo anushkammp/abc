@@ -1,0 +1,19 @@
+import java.io.FileInputStream;
+
+public class DemoChecked {
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		//compile time exceptions-
+		//to print the exception-Table,log file(),console
+		//Throwable: Exception -> IOException -> FileNotFoundxception
+		
+
+		FileInputStream fi=new FileInputStream("aa.txt");
+		
+		
+		
+	}
+
+}

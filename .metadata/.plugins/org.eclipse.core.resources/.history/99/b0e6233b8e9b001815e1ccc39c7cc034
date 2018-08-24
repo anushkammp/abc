@@ -1,0 +1,24 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import com.beans.Book;
+
+public class DemoMapList {
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		Map<String,List<Book>> m=new HashMap<>();
+		List<Book> book1=new ArrayList<>();
+		book1.add(new Book(1,"AAA","Me",123));
+		book1.add(new Book(12,"BBB","Me",123));
+		book1.add(new Book(124,"CCC","Me",123));
+		book1.add(new Book(11,"DDD","Me",123));
+		
+		m.put("ByMe", value)
+
+	}
+
+}

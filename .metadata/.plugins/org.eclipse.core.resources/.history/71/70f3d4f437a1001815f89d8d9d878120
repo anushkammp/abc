@@ -1,0 +1,76 @@
+package com.servlets;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.connection.MyConnection;
+
+/**
+ * Servlet implementation class LoginServlet
+ */
+@WebServlet("/check")
+public class LoginServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    public LoginServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
+	{
+		// TODO Auto-generated method stub
+		
+		Connection con=MyConnection.getConnection();
+		
+		//READING PARAMETER
+		String name,password;
+		name=request.getParameter("username");
+		password=request.getParameter("password");
+		boolean flag=false;
+		
+		Statement st=con.createStatement();
+		ResultSet rs=st.executeQuery("SELECT UNAME,PASSWD FROM LOGIN;");
+		while(rs.next())
+		{
+			if(name.equals(rs.getString(1)) && password.equals(rs.getString(2)))
+			{
+				
+			}
+		}
+		
+		//OUTPUT
+		response.setContentType("text/html");
+		PrintWriter  out =response.getWriter();
+		out.println("<html>");
+		out.println("<body>");
+		
+		if(name.equals("ABC") && password.equals("ABC"))
+		{
+			out.println("HELLO FROM THE OTHER WORLD.............");
+			RequestDispatcher req=request.getRequestDispatcher("success.jsp");
+			req.forward(request, response);
+		}
+		else
+		{
+			RequestDispatcher req=request.getRequestDispatcher("login.jsp");
+			req.forward(request, response);
+		}
+			
+		out.println("</body>");
+		out.println("</html>");
+
+	}
+
+
+}

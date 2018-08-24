@@ -1,0 +1,39 @@
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.util.List;
+
+import com.beans.Book;
+import com.interfaces.BookFile;
+
+public class BookFileImpl implements BookFile {
+
+	@Override
+	public boolean writeDataToFile(List<Book> books) 
+	{
+		// TODO Auto-generated method stub
+		FileOutputStream fo;
+		try 
+		{
+			fo = new FileOutputStream("Book.txt");
+			ObjectOutputStream oo=new ObjectOutputStream(fo);
+		}
+		catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
+	}
+
+	@Override
+	public List<Book> readDataFromFile() 
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

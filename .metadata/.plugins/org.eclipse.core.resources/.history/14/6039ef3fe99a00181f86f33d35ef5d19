@@ -1,0 +1,41 @@
+import java.util.List;
+import java.util.Scanner;
+
+import com.beans.Book;
+import com.interfaces.BookIO;
+
+public class BookIOImpl implements BookIO {
+
+	@Override
+	public Book getBook() 
+	{
+		// TODO Auto-generated method stub
+		Book b=null;
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter no:");
+		b.setIsbn(sc.nextInt());sc.nextLine();
+		System.out.println("Enter name:");
+		b.setName(sc.nextLine());sc.nextLine();
+		System.out.println("Enter publication:");
+		b.setPublication(sc.nextLine());sc.nextLine();
+		System.out.println("Enter price:");
+		b.setPrice(sc.nextDouble());
+		return b;
+	}
+
+	@Override
+	public void printAll(List<Book> books) 
+	{
+		// TODO Auto-generated method stub
+		for(Book b:books)
+			System.out.println(b);
+	}
+
+	@Override
+	public void printBook(Book book) 
+	{
+		// TODO Auto-generated method stub
+		System.out.println(book);
+	}
+
+}

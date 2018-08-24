@@ -1,0 +1,92 @@
+import java.util.List;
+import java.util.Scanner;
+
+import com.beans.Book;
+import com.dao.BookDAO;
+
+public class MainFunction 
+{
+	public static Book getData()
+	{
+		
+		int no;
+		String name,publication,author;
+		Scanner sc=new Scanner(System.in);
+		System.out.print("Enter id:");
+		no=sc.nextInt();
+		sc.nextLine();
+		System.out.print("Enter name:");
+		name=sc.nextLine();
+		sc.nextLine();
+		System.out.print("Enter publication:");
+		publication=sc.nextLine();
+		sc.nextLine();
+		System.out.print("Enter author:");
+		author=sc.nextLine();
+		sc.nextLine();
+		return new Book(no,name,publication,author);
+		
+	}
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int choice,no;
+		String name,author;
+		BookDAO ob=new BookDAOImpl();
+		
+		do
+		{
+			System.out.println("--------MENU------");
+			
+			System.out.println("1)Add Book \n2)Update book \n3)Display all book \n4)Find by ID \n5)Find by name \n6)Find by author");
+			choice=sc.nextInt();
+			
+			switch(choice)
+			{
+			case 1:	System.out.println("Add book");
+					ob.addBook(getData());
+					System.out.println("Data added successfully");
+					break;
+					
+			case 2:	System.out.println("Update book");
+					System.out.print("Enter id:");
+					no=sc.nextInt();
+					sc.nextLine();
+					if(ob.updateBook(getData(),no)>=1)
+						System.out.println("Data updated");
+					else
+						System.out.println("Data not updated");
+					break;
+					
+			case 3: System.out.println("Display all book");
+					List<Book> books=ob.findAllBook();
+					for(Book b:books)
+						System.out.println(b);
+					break;
+					
+			case 4:	System.out.println("Find by ID");
+					System.out.print("Enter id:");
+					no=sc.nextInt();
+					System.out.println(ob.findBookbyID(no));
+					break;
+
+			case 5:	System.out.println("Find by name");
+					System.out.print("Enter name:");
+					name=sc.nextLine();sc.nextLine();
+					System.out.println(ob.findBookbyName(name));
+					break;
+					
+			case 6:	System.out.println("Find by author");
+					System.out.print("Enter author:");
+					author=sc.nextLine();sc.nextLine();
+					System.out.println(ob.findBookbyAuthor(author));
+					break;
+					
+					default:System.out.println("No operation");
+			}
+		}while(choice<=7 && choice>=1);
+	
+	}
+}

@@ -1,0 +1,17 @@
+import com.pojos.Employee;
+
+public class MainEmployee {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Employee e=new Employee(20,1234,"AAA");
+		EmployeeDAO dao=new EmployeeDAO();
+		int row=dao.addEmployee(e);
+		if(row>0)
+			System.out.println(row+" rows affected");
+		else
+			System.out.println("Failed to execte query");
+	}
+
+}

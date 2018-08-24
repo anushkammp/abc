@@ -1,0 +1,41 @@
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
+
+public class DemoConcurrentHashMap {
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+//		hash map create a lock on the data while searching
+//		Concurrent hash map lock is not provided on complete data and allows to add data while search
+	
+		Map<String,String> m=new ConcurrentHashMap();
+		
+		m.put("A", "India");
+		m.put("B", "France");
+		m.put("C", "Germany");
+		m.put("D", "Italy");
+		m.put("E", "Greece");
+		
+		System.out.println(m);
+		
+		Set<Entry<String, String>> set=m.entrySet();
+		
+		Iterator<Entry<String, String>> it=set.iterator();
+		
+		while(it.hasNext())
+		{
+			Map.Entry<String, String> en=(Map.Entry<String, String>)it.next();
+			
+			if(en.getKey().equals("A"))
+				m.put("H", "USA");
+		}
+		
+		System.out.println(m);
+
+	}
+
+}

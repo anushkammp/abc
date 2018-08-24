@@ -1,0 +1,6 @@
+package com.demo;
+
+public interface Myntrface2 {
+	public void add(int a,int b);
+
+}

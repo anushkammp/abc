@@ -1,0 +1,21 @@
+import java.util.HashSet;
+import java.util.Set;
+
+import com.beans.Book;
+
+public class DemoHashSet 
+{
+
+	public static void main(String [] args)
+	{
+		Set<Book> li=new HashSet<>();
+		li.add(new Book());
+		li.add(new Book(1234,"Adv Java","Oracle",1234));
+		li.add(new Book(123,"Adv Java","Oracle",34));
+		li.add(new Book(1234,"Adv Java","Oracle",1234));
+		
+		System.out.println("No of books:"+li.size());
+	
+//		HashSet hash code method
+	}
+}

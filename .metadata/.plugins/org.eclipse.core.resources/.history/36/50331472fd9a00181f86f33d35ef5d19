@@ -1,0 +1,7 @@
+package com.interfaces;
+
+public interface BookFile 
+{
+	public boolean writeDataToFile(List<Book> books)
+
+}

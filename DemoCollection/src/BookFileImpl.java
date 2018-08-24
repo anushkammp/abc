@@ -1,0 +1,106 @@
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.beans.Book;
+import com.interfaces.BookFile;
+
+public class BookFileImpl implements BookFile {
+
+	@Override
+	public boolean writeDataToFile(List<Book> books) 
+	{
+		// TODO Auto-generated method stub
+		FileOutputStream fo;
+		boolean flag=false;
+		try 
+		{
+			BookIOImpl bi=new BookIOImpl();
+			fo = new FileOutputStream("Book.txt");
+			ObjectOutputStream oo=new ObjectOutputStream(fo);
+			List<Book> b=readDataFromFile();
+			b.add(bi.getBook());
+			oo.writeObject(b);
+			oo.close();
+			fo.close();
+			flag=true;
+		}
+		catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+		catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return flag;
+	}
+
+	@Override
+	public List<Book> readDataFromFile() 
+	{
+		// TODO Auto-generated method stub
+		FileInputStream fi;
+		List<Book> books=new ArrayList<Book>();
+		try 
+		{
+			fi = new FileInputStream("student.txt");
+			ObjectInputStream oi=new ObjectInputStream(fi);
+			books=(List<Book>)oi.readObject();
+			oi.close();
+			fi.close();
+		} 
+		catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		return books;
+	}
+
+	@Override
+	public boolean updateDataToFile(Book b) 
+	{
+		// TODO Auto-generated method stub
+		FileOutputStream fo;
+		boolean flag=false;
+		try 
+		{
+			BookIOImpl bi=new BookIOImpl();
+			fo = new FileOutputStream("Book.txt");
+			ObjectOutputStream oo=new ObjectOutputStream(fo);
+			List<Book> b1=readDataFromFile();
+			boolean removed=b1.remove(b);
+			if(removed)
+				flag=true;
+			else
+				flag=false;
+			oo.writeObject(b);
+			oo.close();
+			fo.close();
+			flag=true;
+		}
+		catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+		catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return flag;
+	}
+
+}

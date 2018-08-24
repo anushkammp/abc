@@ -1,0 +1,28 @@
+package com.beans;
+
+public class Book 
+{
+	private int isbn;
+	private String name;
+	private String publication;
+	private double price;
+	
+	public Book()
+	{
+		isbn=12;
+		name="Core Java";
+		publication="My Publication";
+		price=123.50;
+	}
+	
+	public Book(int isbn, String name, String publication, double price) 
+	{
+		super();
+		this.isbn = isbn;
+		this.name = name;
+		this.publication = publication;
+		this.price = price;
+	}
+	
+	
+}

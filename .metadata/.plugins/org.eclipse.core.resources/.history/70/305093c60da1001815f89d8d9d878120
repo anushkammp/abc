@@ -1,0 +1,31 @@
+import java.sql.Connection;
+import java.sql.DatabaseMetaData;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import com.connection.MyConnection;
+
+public class DempTransaction {
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		Connection con=MyConnection.getConnection();
+		
+		try 
+		{
+			Statement st=con.createStatement();
+			st.executeUpdate("insert into Employee values(121,'AAA',120)");
+			st.executeUpdate("insert into Employee values(16,'BBB',320)");
+			st.executeUpdate("insert into Employee values(18,'CCC',420)");
+			st.executeUpdate("insert into Employee values(12,'AAA',120)");
+		}
+		catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+
+	}
+
+}

@@ -1,0 +1,68 @@
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.List;
+
+import com.beans.Book;
+import com.connection.MyConnection;
+import com.dao.BookDAO;
+
+public class BookDAOImpl implements BookDAO {
+
+	@Override
+	public boolean addBook(Book book) 
+	{
+		boolean flag=false;
+		String q="insert into Book values(?,?,?,?)";
+		try 
+		{
+			PreparedStatement ps=MyConnection.getConnection().prepareStatement(q);
+			ps.setInt(1, book.getIsbn());
+			ps.setString(2, book.getName());
+			ps.setString(3, book.getAuther());
+			no=ps.executeUpdate();
+			
+		}
+		catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		return flag;
+	}
+
+	@Override
+	public int updateBook(Book book, int isbn) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int deleteBook(int isbn) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public Book findBookbyID(int isbn) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Book> findBookbyName(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Book> findAllBook() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Book> findBookbyAuthor(String author) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

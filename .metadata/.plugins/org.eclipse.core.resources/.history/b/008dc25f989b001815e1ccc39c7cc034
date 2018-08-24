@@ -1,0 +1,13 @@
+
+public class DemoConcurrentHashMap {
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+//		hash map create a lock on the data while searching
+//		Concurrent hash map lock is not provided on complete data and allows to add data while search
+		
+
+	}
+
+}

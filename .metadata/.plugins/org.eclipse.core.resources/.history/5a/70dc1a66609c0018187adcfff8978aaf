@@ -1,0 +1,28 @@
+
+public class DemoPriority {
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		
+		System.out.println("Main  started:"+Thread.currentThread().getName());
+		Thread t=new MyThread();
+		t.setName("HIGH");
+		t.setPriority(Thread.MAX_PRIORITY);
+		
+		
+		try 
+		{
+			t.join();
+		} 
+		catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		t.start();
+//		System.out.println("Priority:"+t.getPriority());
+		System.out.println("Main  ended:"+Thread.currentThread().getName());
+
+	}
+
+}

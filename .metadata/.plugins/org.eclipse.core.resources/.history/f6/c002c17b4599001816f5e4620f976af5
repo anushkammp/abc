@@ -1,0 +1,75 @@
+package com.pojo;
+
+public class Employee extends Person 
+{
+
+	private int empID;
+	private double salary;
+	
+	//constructor
+	public Employee()
+	{
+		empID=0;
+		salary=1000;
+	}
+	public Employee(int age,String name,int empID,double salary)
+	{
+		super(age,name);
+		this.empID=empID;
+		this.salary=salary;
+	}
+	
+	//getters and setters
+	public int getEmpID() {
+		return empID;
+	}
+	public void setEmpID(int empID) {
+		this.empID = empID;
+	}
+	public double getSalary() {
+		return salary;
+	}
+	public void setSalary(double salary) {
+		this.salary = salary;
+	}
+	
+	public void display()
+	{
+//		System.out.println("EmpName:"+getName()+"\tEmpAge:"+getAge()+"\tEmpID:"+empID+"\t Salary:"+salary);
+		super.display();
+		System.out.println("\tEmpID:"+empID+"\tSalary:"+salary);
+	}
+	
+	@Override
+	public String toString()
+	{
+		return super.toString()+"\tEmpID:"+empID+"\tSalary:"+salary;
+	}
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = super.hashCode();
+		result = prime * result + empID;
+		long temp;
+		temp = Double.doubleToLongBits(salary);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!super.equals(obj))
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Employee other = (Employee) obj;
+		if (empID != other.empID)
+			return false;
+		if (Double.doubleToLongBits(salary) != Double.doubleToLongBits(other.salary))
+			return false;
+		return true;
+	}
+	
+
+}

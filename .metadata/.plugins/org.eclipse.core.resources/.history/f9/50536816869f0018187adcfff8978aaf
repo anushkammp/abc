@@ -1,0 +1,55 @@
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import com.connection.MyConnection;
+import com.pojos.Employee;
+
+public class EmployeeDAO 
+{
+	public int addEmployee(Employee e)
+	{
+		int no = 0;
+		String q="insert into Employee values(?,?,?)";
+		try 
+		{
+			PreparedStatement ps=MyConnection.getConnection().prepareStatement(q);
+			ps.setInt(1, e.getEmpID());
+			ps.setString(2, e.getName());
+			ps.setInt(3, e.getSalary());
+			no=ps.executeUpdate();
+			
+		}
+		catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		return no;
+	}
+	
+	public Employee[] getAllEmployee()
+	{
+		Statement st;
+		int i=0;
+		Employee[] emps=null;
+		try 
+		{
+			st = MyConnection.getConnection().createStatement();
+			ResultSet rs=st.executeQuery("Select * from Employee");
+			while(rs.next())
+			{
+				emps[i]=new Employee(rs.getInt(1),rs.getInt(3),rs.getString(2));
+				i++;
+			}
+			
+		}
+		catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+	}
+
+}

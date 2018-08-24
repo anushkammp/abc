@@ -1,0 +1,21 @@
+
+public class AccountDanger extends Thread 
+{
+	private Account one=new Account();
+	
+	@Override
+	public void run() 
+	{
+		// TODO Auto-generated method stub
+		for(int )
+	}
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		
+		
+
+	}
+
+}

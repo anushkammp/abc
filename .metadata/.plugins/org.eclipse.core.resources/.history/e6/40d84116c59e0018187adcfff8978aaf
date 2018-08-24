@@ -1,0 +1,19 @@
+package com.annotation;
+
+public class TestAnnotation 
+{
+//	@MyAnnotation(value=12)
+	@MyDate(12,"Jan",2018)
+	public static void display()
+	{
+		System.out.println("Display");
+	}
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		display();
+
+	}
+
+}

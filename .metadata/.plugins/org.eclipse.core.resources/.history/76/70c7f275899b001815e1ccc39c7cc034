@@ -1,0 +1,14 @@
+import java.util.HashMap;
+import java.util.Map;
+
+public class DemoHashMap {
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		Map m=new HashMap();
+		
+
+	}
+
+}

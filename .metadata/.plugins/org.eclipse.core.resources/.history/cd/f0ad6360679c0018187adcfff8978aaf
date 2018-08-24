@@ -1,0 +1,15 @@
+
+public class DemoWait {
+
+	public static void main(String[] args) 
+	{
+		DemoNotify n=new DemoNotify();
+		n.start();
+		n.wait();
+		System.out.println("sum:"+n.sum);
+		
+		// TODO Auto-generated method stub
+
+	}
+
+}

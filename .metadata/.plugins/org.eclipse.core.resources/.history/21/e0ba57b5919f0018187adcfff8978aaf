@@ -1,0 +1,12 @@
+package com.beans;
+
+public class Book 
+{
+	private int isbn;
+	private String name,publication,auther;
+	public Book() 
+	{
+		// TODO Auto-generated constructor stub
+	}
+
+}

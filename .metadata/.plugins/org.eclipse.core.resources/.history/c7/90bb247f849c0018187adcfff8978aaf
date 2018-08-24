@@ -1,0 +1,14 @@
+
+public class Supplier implements Runnable 
+{
+	private Message m;
+
+	@Override
+	public void run() 
+	{
+		// TODO Auto-generated method stub
+		System.out.println("In Supplier");
+
+	}
+
+}
